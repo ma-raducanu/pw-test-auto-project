@@ -1,4 +1,4 @@
-#playwright-test-automation-project
+# Playwright Test Automation Project
 
 Steps required to run everything:
 
