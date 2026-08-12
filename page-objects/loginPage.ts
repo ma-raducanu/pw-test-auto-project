@@ -2,15 +2,19 @@ import { Page, Locator } from '@playwright/test';
 import { BasePage } from './basePage';
 
 export class LoginPage extends BasePage {
-  readonly usernameInput: Locator;
+  readonly flashMessage: Locator;
+  readonly logInButton: Locator;
+  readonly logOutButton: Locator;
   readonly passwordInput: Locator;
-  readonly submitButton: Locator;
+  readonly usernameInput: Locator;
 
   constructor(page: Page) {
     super(page);
-    this.usernameInput = page.getByRole('textbox', { name: 'Username' });
+    this.flashMessage = page.locator('#flash');
+    this.logInButton = page.getByRole('button', { name: 'Login' });
+    this.logOutButton = page.getByRole('link', { name: 'Logout' });
     this.passwordInput = page.getByRole('textbox', { name: 'Password' });
-    this.submitButton = page.getByRole('button', { name: 'Login' });
+    this.usernameInput = page.getByRole('textbox', { name: 'Username' });
   }
 
   async goto(): Promise<void> {
@@ -18,9 +22,9 @@ export class LoginPage extends BasePage {
     await this.getSideMenuLink('Form Authentication').click();
   }
 
-  async login(username: string, password: string): Promise<void> {
+  async logIn(username: string, password: string): Promise<void> {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);
-    await this.submitButton.click();
+    await this.logInButton.click();
   }
 }

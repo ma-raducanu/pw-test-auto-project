@@ -5,7 +5,6 @@ export class ElementsPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-
   }
 
   async goto(): Promise<void> {
