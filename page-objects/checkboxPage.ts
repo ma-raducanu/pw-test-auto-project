@@ -15,8 +15,4 @@ export class CheckboxPage extends BasePage {
     await this.goToHome();
     await this.getSideMenuLink('Checkboxes').click();
   }
-
-  getElementsPageButton(buttonName: string): Locator {
-    return this.page.getByRole('button', { name: buttonName });
-  }
 }
