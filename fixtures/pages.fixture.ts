@@ -1,12 +1,14 @@
 import { test as base } from '@playwright/test';
 import { CheckboxPage } from '../page-objects/checkboxPage';
 import { ElementPage } from '../page-objects/elementPage';
+import { FileDownloadPage } from '../page-objects/fileDownloadPage';
 import { ForgotPasswordPage } from '../page-objects/forgotPasswordPage';
 import { LoginPage } from '../page-objects/loginPage';
 
 type Pages = {
   checkboxPage: CheckboxPage;
   elementPage: ElementPage;
+  fileDownloadPage: FileDownloadPage;
   forgotPasswordPage: ForgotPasswordPage;
   loginPage: LoginPage;
 };
@@ -19,6 +21,10 @@ export const test = base.extend<Pages> ({
   elementPage: async ({ page }, use) => {
     const elementPage = new ElementPage(page);
     await use(elementPage);
+  },
+  fileDownloadPage: async ({ page }, use) => {
+    const fileDownloadPage = new FileDownloadPage(page);
+    await use(fileDownloadPage);
   },
   forgotPasswordPage: async ({ page }, use) => {
     const forgotPasswordPage = new ForgotPasswordPage(page);
