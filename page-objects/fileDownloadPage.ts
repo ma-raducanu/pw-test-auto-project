@@ -1,6 +1,7 @@
 import { Page, Locator, Download } from '@playwright/test';
 import { BasePage } from './basePage';
 import fs from 'fs';
+import sizeOf from 'image-size';
 
 export class FileDownloadPage extends BasePage {
 
@@ -22,6 +23,24 @@ export class FileDownloadPage extends BasePage {
   async getDownloadContents(download: Download): Promise<string> {
     const filePath = await download.path();
     return fs.readFileSync(filePath!, 'utf-8');
+  }
+
+  async getDownloadSize(download: Download): Promise<number> {
+    const filePath = await download.path();
+    if (!filePath) {
+      throw new Error('Downloaded file path is not available');
+    }
+    const stats = fs.statSync(filePath);
+    return stats.size;
+  }
+
+  async getImageSize(download: Download) {
+    const filePath = await download.path();
+    if (!filePath) {
+      throw new Error('Downloaded file path is not available');
+    }
+    const imageBuffer = fs.readFileSync(filePath);
+    return sizeOf(imageBuffer);
   }
 
   getLinkByFileName(fileName: string): Locator {
