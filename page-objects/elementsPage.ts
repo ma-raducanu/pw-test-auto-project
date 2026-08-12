@@ -14,7 +14,7 @@ export class ElementsPage extends BasePage {
     await this.getSideMenuLink('Add/Remove Elements').click();
   }
 
-  getElementsPageButtons(buttonName: string): Locator {
+  getElementsPageButton(buttonName: string): Locator {
     return this.page.getByRole('button', { name: buttonName });
   }
 }

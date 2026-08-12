@@ -11,7 +11,7 @@ export class BasePage {
     await this.page.goto('https://the-internet.herokuapp.com/');
   }
 
-  getSideMenuLink(buttonName: string): Locator {
-    return this.page.getByRole('link', { name: buttonName });
+  getSideMenuLink(linkName: string): Locator {
+    return this.page.getByRole('link', { name: linkName });
   }
 }
