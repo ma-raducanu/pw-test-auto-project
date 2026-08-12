@@ -1,7 +1,7 @@
 import { Page, Locator } from '@playwright/test';
 import { BasePage } from './basePage';
 
-export class ElementsPage extends BasePage {
+export class ElementPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
@@ -12,7 +12,7 @@ export class ElementsPage extends BasePage {
     await this.getSideMenuLink('Add/Remove Elements').click();
   }
 
-  getElementsPageButton(buttonName: string): Locator {
+  getElementPageButton(buttonName: string): Locator {
     return this.page.getByRole('button', { name: buttonName });
   }
 }
