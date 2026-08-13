@@ -4,11 +4,26 @@ test.beforeEach(async ({ fileDownloadPage }) => {
   await fileDownloadPage.goto();
 });
 
-test('Page Title', async ({ fileDownloadPage }) => {
+test('Verify page title', async ({ fileDownloadPage }) => {
   await expect(fileDownloadPage.contentHeading).toHaveText('File Downloader');
 });
 
-test.skip('Image File', async ({ fileDownloadPage }) => {
+test('Download any image file', async ({ fileDownloadPage }) => {
+  const link = fileDownloadPage.getFirstImageFileLink();
+  const download = await fileDownloadPage.downloadFromLink(link);
+  expect(download.suggestedFilename()).toMatch(/\.(jpg|jpeg|png|gif)$/i);
+});
+
+test('Download any text file', async ({ fileDownloadPage }) => {
+  const link = fileDownloadPage.getFirstTextFileLink();
+  const download = await fileDownloadPage.downloadFromLink(link);
+  expect(download.suggestedFilename()).toMatch(/\.txt$/i);
+  // expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(0);
+  // const contents = await fileDownloadPage.getDownloadContents(download);
+  // expect(contents.length).toBeGreaterThan(0);
+});
+
+test.skip('Download a specific image file', async ({ fileDownloadPage }) => {
   const fileName = 'cognizant.png';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);
@@ -19,7 +34,7 @@ test.skip('Image File', async ({ fileDownloadPage }) => {
   expect(image.height).toBe(186);
 });
 
-test.skip('Text File', async ({ fileDownloadPage }) => {
+test.skip('Download a specific text file', async ({ fileDownloadPage }) => {
   const fileName = 'my test file.txt';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);

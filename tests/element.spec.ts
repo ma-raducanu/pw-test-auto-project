@@ -4,23 +4,23 @@ test.beforeEach(async ({ elementPage }) => {
   await elementPage.goto();
 });
 
-test('Page Title', async ({ elementPage }) => {
+test('Verify page title', async ({ elementPage }) => {
   await expect(elementPage.contentHeading).toHaveText('Add/Remove Elements');
 });
 
-test('Add Element', async ({ elementPage }) => {
+test('Add an element', async ({ elementPage }) => {
   await elementPage.getElementPageButton('Add Element').click();
   await expect(elementPage.getElementPageButton('Delete')).toBeVisible();
 });
 
-test('Add Multiple Elements', async ({ elementPage }) => {
+test('Add multiple elements', async ({ elementPage }) => {
   for (let i = 0; i < 2; i++) {
     await elementPage.getElementPageButton('Add Element').click();
   }
   await expect(elementPage.getElementPageButton('Delete')).toHaveCount(2);
 });
 
-test('Delete Element', async ({ elementPage }) => {
+test('Delete an element', async ({ elementPage }) => {
   await elementPage.getElementPageButton('Add Element').click();
   const deleteButton = elementPage.getElementPageButton('Delete');
   await deleteButton.click();

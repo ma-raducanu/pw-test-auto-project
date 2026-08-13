@@ -9,10 +9,29 @@ export class FileDownloadPage extends BasePage {
     super(page);
   }
 
+  async goto(): Promise<void> {
+    await this.goToHome();
+    await this.getSideMenuLink('File Download').first().click();
+  }
+
   async downloadFile(fileName: string): Promise<Download> {
     const downloadPromise = this.page.waitForEvent('download');
     await this.getLinkByFileName(fileName).click();
     return downloadPromise;
+  }
+
+  async downloadFromLink(link: Locator): Promise<Download> {
+    const downloadPromise = this.page.waitForEvent('download');
+    await link.click();
+    return downloadPromise;
+  }
+
+  private async getDownloadedFilePath(download: Download): Promise<string> {
+    const filePath = await download.path();
+    if (!filePath) {
+      throw new Error('Downloaded file path is not available');
+    }
+    return filePath;
   }
 
   async getDownloadContents(download: Download): Promise<string> {
@@ -36,17 +55,12 @@ export class FileDownloadPage extends BasePage {
     return { width: dimensions.width, height: dimensions.height, type: dimensions.type };
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('File Download').first().click();
+  getFirstImageFileLink(): Locator {
+    return this.page.getByRole('link', { name: /\.(jpg|jpeg|png|gif)$/i }).first();
   }
 
-  private async getDownloadedFilePath(download: Download): Promise<string> {
-    const filePath = await download.path();
-    if (!filePath) {
-      throw new Error('Downloaded file path is not available');
-    }
-    return filePath;
+  getFirstTextFileLink(): Locator {
+    return this.page.getByRole('link', { name: /\.txt$/i }).first();
   }
 
   getLinkByFileName(fileName: string): Locator {

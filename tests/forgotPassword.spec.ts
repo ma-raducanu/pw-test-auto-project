@@ -4,11 +4,11 @@ test.beforeEach(async ({ forgotPasswordPage }) => {
   await forgotPasswordPage.goto();
 });
 
-test('Page Title', async ({ forgotPasswordPage }) => {
+test('Verify page title', async ({ forgotPasswordPage }) => {
   await expect(forgotPasswordPage.contentHeading).toHaveText('Forgot Password');
 });
 
-test('Retrieve Password', async ({ forgotPasswordPage }) => {
+test('Retrieve password', async ({ forgotPasswordPage }) => {
   await forgotPasswordPage.retrievePassword('test@test.com');
   await expect(forgotPasswordPage.confirmationMessage).toContainText('Internal Server Error');
 });
