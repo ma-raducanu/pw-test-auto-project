@@ -1,6 +1,7 @@
 import { test as base } from '@playwright/test';
 import { CheckboxPage } from '../page-objects/checkboxPage';
-import { DropdownListPage } from '../page-objects/dropDownListPage';
+import { DragAndDropPage } from '../page-objects/dragAndDropPage';
+import { DropdownListPage } from '../page-objects/dropdownPage';
 import { ElementPage } from '../page-objects/elementPage';
 import { FileDownloadPage } from '../page-objects/fileDownloadPage';
 import { ForgotPasswordPage } from '../page-objects/forgotPasswordPage';
@@ -8,6 +9,7 @@ import { LoginPage } from '../page-objects/loginPage';
 
 type Pages = {
   checkboxPage: CheckboxPage;
+  dragAndDropPage: DragAndDropPage;
   dropdownListPage: DropdownListPage;
   elementPage: ElementPage;
   fileDownloadPage: FileDownloadPage;
@@ -19,6 +21,10 @@ export const test = base.extend<Pages> ({
   checkboxPage: async ({ page }, use) => {
     const checkboxPage = new CheckboxPage(page);
     await use(checkboxPage);
+  },
+  dragAndDropPage: async ({ page }, use) => {
+    const dragAndDropPage = new DragAndDropPage(page);
+    await use(dragAndDropPage);
   },
   dropdownListPage: async ({ page }, use) => {
     const dropdownListPage = new DropdownListPage(page);
