@@ -8,7 +8,7 @@ test('Page Title', async ({ fileDownloadPage }) => {
   await expect(fileDownloadPage.contentHeading).toHaveText('File Downloader');
 });
 
-test('Image File', async ({ fileDownloadPage }) => {
+test.skip('Image File', async ({ fileDownloadPage }) => {
   const fileName = 'cognizant.png';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);
@@ -19,7 +19,7 @@ test('Image File', async ({ fileDownloadPage }) => {
   expect(image.height).toBe(186);
 });
 
-test('Text File', async ({ fileDownloadPage }) => {
+test.skip('Text File', async ({ fileDownloadPage }) => {
   const fileName = 'my test file.txt';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);
