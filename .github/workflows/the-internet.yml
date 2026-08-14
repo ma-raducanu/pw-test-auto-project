@@ -1,9 +1,19 @@
-name: Playwright Tests
+name: The Internet
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+    paths:
+      - 'fixtures/the-internet/**'
+      - 'page-objects/the-internet/**'
+      - 'tests/the-internet/**'
+      - '.github/workflows/the-internet.yml'
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
+    paths:
+      - 'fixtures/the-internet/**'
+      - 'page-objects/the-internet/**'
+      - 'tests/the-internet/**'
+      - '.github/workflows/the-internet.yml'
 jobs:
   test:
     timeout-minutes: 60
@@ -18,13 +28,13 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test tests/the-internet
       env:
         TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report
-        path: playwright-report/
+        name: playwright-report-the-internet
+        path: playwright-report/the-internet
         retention-days: 30

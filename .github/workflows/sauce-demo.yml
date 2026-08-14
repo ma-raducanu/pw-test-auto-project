@@ -1,0 +1,40 @@
+name: Sauce Demo
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tests/sauce-demo/**'
+      - 'fixtures/sauce-demo/**'
+      - 'page-objects/sauce-demo/**'
+      - '.github/workflows/sauce-demo.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tests/sauce-demo/**'
+      - 'fixtures/sauce-demo/**'
+      - 'page-objects/sauce-demo/**'
+      - '.github/workflows/sauce-demo.yml'
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test tests/sauce-demo
+      # env:
+      #   TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+      #   TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: playwright-report-sauce-demo
+        path: playwright-report/sauce-demo
+        retention-days: 30
