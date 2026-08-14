@@ -3,17 +3,23 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'tests/sauce-demo/**'
+      - '.github/workflows/sauce-demo.yml'
       - 'fixtures/sauce-demo/**'
       - 'page-objects/sauce-demo/**'
-      - '.github/workflows/sauce-demo.yml'
+      - 'tests/sauce-demo/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'playwright.config.ts'
   pull_request:
     branches: [ main ]
     paths:
-      - 'tests/sauce-demo/**'
+      - '.github/workflows/sauce-demo.yml'
       - 'fixtures/sauce-demo/**'
       - 'page-objects/sauce-demo/**'
-      - '.github/workflows/sauce-demo.yml'
+      - 'tests/sauce-demo/**'    
+      - 'package.json'
+      - 'package-lock.json'
+      - 'playwright.config.ts'
 jobs:
   test:
     timeout-minutes: 60

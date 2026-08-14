@@ -3,13 +3,14 @@ import type { Locator, Page } from '@playwright/test';
 export class BasePage {
   protected readonly page: Page;
   readonly contentHeading: Locator;
+  readonly content: Locator;
 
   constructor(page: Page) {
     this.page = page;
-    const contentLocator = page.locator('#content');
+    this.content = page.locator('#content');
     this.contentHeading =
-      contentLocator.locator('h2').or(
-      contentLocator.locator('h3'));
+      this.content.locator('h2').or(
+      this.content.locator('h3'));
   }
 
   async goToHome(): Promise<void> {

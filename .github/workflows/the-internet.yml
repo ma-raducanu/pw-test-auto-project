@@ -3,17 +3,23 @@ on:
   push:
     branches: [ main ]
     paths:
+      - '.github/workflows/the-internet.yml'
       - 'fixtures/the-internet/**'
       - 'page-objects/the-internet/**'
       - 'tests/the-internet/**'
-      - '.github/workflows/the-internet.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'playwright.config.ts'
   pull_request:
     branches: [ main ]
     paths:
+      - '.github/workflows/the-internet.yml'
       - 'fixtures/the-internet/**'
       - 'page-objects/the-internet/**'
       - 'tests/the-internet/**'
-      - '.github/workflows/the-internet.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'playwright.config.ts'
 jobs:
   test:
     timeout-minutes: 60
