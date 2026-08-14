@@ -5,11 +5,11 @@ test.beforeEach(async ({ homePage }) => {
   await homePage.goToHome();
 });
 
-test.skip('Sign up with valid credentials', async ({ homePage, registerPage }) => {
+test('Sign up with valid credentials', async ({ homePage, registerPage }) => {
   await registerPage.signUpButton.click();
   await registerPage.fillInRegistrationForm('John', 'Smith', generateUniqueEmail(), generateUniquePassword());
-  const userEmail = await registerPage.emailInput.textContent();
+  const userEmail = await registerPage.emailInput.inputValue();
   await registerPage.createButton.click();
   await homePage.myAccountLink.click();
-  await expect(homePage.yourAccountSection).toContainText(userEmail!);
+  await expect(homePage.yourAccountSection).toContainText(userEmail);
 });

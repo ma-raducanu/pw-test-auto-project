@@ -20,11 +20,9 @@ export class RegisterPage {
   }
 
   async fillInRegistrationForm(firstName: string, lastName: string, email: string, password: string): Promise<void> {
-    await this.signUpButton.click();
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
-    await this.createButton.click();
   }
 }
