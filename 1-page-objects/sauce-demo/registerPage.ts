@@ -16,7 +16,7 @@ export class RegisterPage {
     this.lastNameInput = this.page.locator('input#last_name');
     this.emailInput = this.page.locator('input#email');
     this.passwordInput = this.page.locator('input#password');
-    this.createButton = this.page.getByRole('button', {name: 'Create'})
+    this.createButton = this.page.getByRole('button', {name: 'Create'});
   }
 
   async fillInRegistrationForm(firstName: string, lastName: string, email: string, password: string): Promise<void> {

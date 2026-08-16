@@ -4,9 +4,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/the-internet.yml'
-      - 'fixtures/the-internet/**'
-      - 'page-objects/the-internet/**'
-      - 'tests/the-internet/**'
+      - '0-utils/sauce-demo/**'
+      - '1-page-objects/sauce-demo/**'
+      - '2-fixtures/sauce-demo/**'
+      - '3-tests/sauce-demo/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
@@ -14,9 +15,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/the-internet.yml'
-      - 'fixtures/the-internet/**'
-      - 'page-objects/the-internet/**'
-      - 'tests/the-internet/**'
+      - '0-utils/sauce-demo/**'
+      - '1-page-objects/sauce-demo/**'
+      - '2-fixtures/sauce-demo/**'
+      - '3-tests/sauce-demo/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'

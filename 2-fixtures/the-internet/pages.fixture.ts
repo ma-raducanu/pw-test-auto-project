@@ -1,11 +1,11 @@
 import { test as base } from '@playwright/test';
-import { CheckboxPage } from '../../page-objects/the-internet/checkboxPage';
-import { DragAndDropPage } from '../../page-objects/the-internet/dragAndDropPage';
-import { DropdownListPage } from '../../page-objects/the-internet/dropdownPage';
-import { ElementPage } from '../../page-objects/the-internet/elementPage';
-import { FileDownloadPage } from '../../page-objects/the-internet/fileDownloadPage';
-import { ForgotPasswordPage } from '../../page-objects/the-internet/forgotPasswordPage';
-import { LoginPage } from '../../page-objects/the-internet/loginPage';
+import { CheckboxPage } from '../../1-page-objects/the-internet/checkboxPage';
+import { DragAndDropPage } from '../../1-page-objects/the-internet/dragAndDropPage';
+import { DropdownListPage } from '../../1-page-objects/the-internet/dropdownPage';
+import { ElementPage } from '../../1-page-objects/the-internet/elementPage';
+import { FileDownloadPage } from '../../1-page-objects/the-internet/fileDownloadPage';
+import { ForgotPasswordPage } from '../../1-page-objects/the-internet/forgotPasswordPage';
+import { LoginPage } from '../../1-page-objects/the-internet/loginPage';
 
 type Pages = {
   checkboxPage: CheckboxPage;

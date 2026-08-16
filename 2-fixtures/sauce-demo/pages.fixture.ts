@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
-import { HomePage } from '../../page-objects/sauce-demo/homePage';
-import { RegisterPage } from '../../page-objects/sauce-demo/registerPage';
+import { HomePage } from '../../1-page-objects/sauce-demo/homePage';
+import { RegisterPage } from '../../1-page-objects/sauce-demo/registerPage';
 
 type Pages = {
   homePage: HomePage;

@@ -1,4 +1,4 @@
-import { expect, test } from '../../fixtures/the-internet/pages.fixture';
+import { expect, test } from '../../2-fixtures/the-internet/pages.fixture';
 
 test.beforeEach(async ({ fileDownloadPage }) => {
   await fileDownloadPage.goto();
@@ -18,9 +18,9 @@ test('Download any text file', async ({ fileDownloadPage }) => {
   const link = fileDownloadPage.getFirstTextFileLink();
   const download = await fileDownloadPage.downloadFromLink(link);
   expect(download.suggestedFilename()).toMatch(/\.txt$/i);
-  // expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(0);
-  // const contents = await fileDownloadPage.getDownloadContents(download);
-  // expect(contents.length).toBeGreaterThan(0);
+  expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(0);
+  const contents = await fileDownloadPage.getDownloadContents(download);
+  expect(contents.length).toBeGreaterThan(0);
 });
 
 test.skip('Download a specific image file', async ({ fileDownloadPage }) => {

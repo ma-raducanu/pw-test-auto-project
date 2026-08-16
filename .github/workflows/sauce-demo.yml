@@ -4,10 +4,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/sauce-demo.yml'
-      - 'fixtures/sauce-demo/**'
-      - 'page-objects/sauce-demo/**'
-      - 'tests/sauce-demo/**'
-      - 'utils/sauce-demo/**'
+      - '0-utils/sauce-demo/**'
+      - '1-page-objects/sauce-demo/**'
+      - '2-fixtures/sauce-demo/**'
+      - '3-tests/sauce-demo/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
@@ -15,10 +15,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/sauce-demo.yml'
-      - 'fixtures/sauce-demo/**'
-      - 'page-objects/sauce-demo/**'
-      - 'tests/sauce-demo/**'
-      - 'utils/sauce-demo/**'
+      - '0-utils/sauce-demo/**'
+      - '1-page-objects/sauce-demo/**'
+      - '2-fixtures/sauce-demo/**'
+      - '3-tests/sauce-demo/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
