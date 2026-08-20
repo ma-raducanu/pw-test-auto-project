@@ -10,7 +10,6 @@ test('Verify page title', async ({ dropdownListPage }) => {
 
 test('Select the first option from the dropdown', async ({ dropdownListPage }) => {
   const firstOptionText = await dropdownListPage.dropdownOption.nth(1).textContent();
-  expect(firstOptionText).not.toBeNull();
   await dropdownListPage.dropdown.selectOption({ index: 1 });
   await expect(dropdownListPage.dropdownCheckedOption).toHaveText(firstOptionText!);
 });

@@ -14,6 +14,6 @@ export function generateUniqueEmail(prefix = 'testuser'): string {
   return `${prefix}_${generateTimestamp()}@yopmail.com`;
 }
 
-export function generateUniquePassword(prefix = 'testpass'): string {
-  return `${prefix}_${generateTimestamp()}!`;
+export function generateUniquePassword(prefix = 'T3stp@ss'): string {
+  return `${prefix}_${generateTimestamp()}`;
 }

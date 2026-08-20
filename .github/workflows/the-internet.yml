@@ -4,10 +4,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/the-internet.yml'
-      - '0-utils/sauce-demo/**'
-      - '1-page-objects/sauce-demo/**'
-      - '2-fixtures/sauce-demo/**'
-      - '3-tests/sauce-demo/**'
+      - '0-utils/the-internet/**'
+      - '1-page-objects/the-internet/**'
+      - '2-fixtures/the-internet/**'
+      - '3-tests/the-internet/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
@@ -15,10 +15,10 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/the-internet.yml'
-      - '0-utils/sauce-demo/**'
-      - '1-page-objects/sauce-demo/**'
-      - '2-fixtures/sauce-demo/**'
-      - '3-tests/sauce-demo/**'
+      - '0-utils/the-internet/**'
+      - '1-page-objects/the-internet/**'
+      - '2-fixtures/the-internet/**'
+      - '3-tests/the-internet/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
@@ -36,7 +36,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test tests/the-internet
+      run: npx playwright test 3-tests/the-internet
       env:
         TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
         TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
