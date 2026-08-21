@@ -3,22 +3,22 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '.github/workflows/sauce-demo.yml'
-      - '0-utils/sauce-demo/**'
-      - '1-page-objects/sauce-demo/**'
-      - '2-fixtures/sauce-demo/**'
-      - '3-tests/sauce-demo/**'
+      - '.github/workflows/automation-exercise.yml'
+      - '0-utils/automation-exercise/**'
+      - '1-page-objects/automation-exercise/**'
+      - '2-fixtures/automation-exercise/**'
+      - '3-tests/automation-exercise/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
   pull_request:
     branches: [ main ]
     paths:
-      - '.github/workflows/sauce-demo.yml'
-      - '0-utils/sauce-demo/**'
-      - '1-page-objects/sauce-demo/**'
-      - '2-fixtures/sauce-demo/**'
-      - '3-tests/sauce-demo/**'
+      - '.github/workflows/automation-exercise.yml'
+      - '0-utils/automation-exercise/**'
+      - '1-page-objects/automation-exercise/**'
+      - '2-fixtures/automation-exercise/**'
+      - '3-tests/automation-exercise/**'
       - 'package.json'
       - 'package-lock.json'
       - 'playwright.config.ts'
@@ -36,13 +36,13 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test 3-tests/sauce-demo
+      run: npx playwright test 3-tests/automation-exercise
       # env:
       #   TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
       #   TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-        name: playwright-report-sauce-demo
-        path: playwright-report/sauce-demo
+        name: playwright-report-automation-exercise
+        path: playwright-report/automation-exercise
         retention-days: 30

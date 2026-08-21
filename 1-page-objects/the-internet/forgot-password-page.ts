@@ -1,5 +1,5 @@
 import type { Locator, Page } from '@playwright/test';
-import { BasePage } from './basePage';
+import { BasePage } from './base-page';
 
 export class ForgotPasswordPage extends BasePage {
   readonly confirmationMessage: Locator;
