@@ -1,4 +1,4 @@
-import { expect, test } from '../../2-fixtures/automation-exercise/page-fixtures';
+import { expect, test } from '../../2-fixtures/automation-exercise/page.fixtures';
 
 test.beforeEach(async ({ homePage }) => {
   await homePage.goToHome();

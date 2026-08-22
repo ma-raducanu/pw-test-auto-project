@@ -1,6 +1,6 @@
 
 import {faker} from '@faker-js/faker';
-import type { TestUser } from './test-data-types';
+import type { TestUser } from './test.data.types';
 
 export function createTestUser(overrides?: Partial<TestUser>): TestUser {
   return {

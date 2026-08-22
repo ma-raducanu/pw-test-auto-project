@@ -1,4 +1,4 @@
-import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
+import { expect, test } from '../../2-fixtures/the-internet/page.fixtures';
 
 test.beforeEach(async ({ fileDownloadPage }) => {
   await fileDownloadPage.goToFileDownloadPage();

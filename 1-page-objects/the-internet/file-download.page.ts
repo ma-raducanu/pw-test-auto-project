@@ -1,5 +1,5 @@
 import type { Download, Locator, Page } from '@playwright/test';
-import { BasePage } from './base-page';
+import { BasePage } from './base.page';
 import fs from 'fs';
 import sizeOf from 'image-size';
 
