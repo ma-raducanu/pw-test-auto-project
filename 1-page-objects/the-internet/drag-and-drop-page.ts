@@ -9,9 +9,9 @@ export class DragAndDropPage extends BasePage {
     this.columns = page.locator('#columns').locator('div[id*="column"]');
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Drag and Drop').click();
+  async goToDragAndDropPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Drag and Drop');
   }
 
   getColumnId(columnName: string): Locator {

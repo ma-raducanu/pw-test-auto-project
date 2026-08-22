@@ -9,9 +9,9 @@ export class FileDownloadPage extends BasePage {
     super(page);
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('File Download').first().click();
+  async goToFileDownloadPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('File Download');
   }
 
   async downloadFile(fileName: string): Promise<Download> {

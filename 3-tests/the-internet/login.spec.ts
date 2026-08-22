@@ -1,7 +1,7 @@
 import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
 
 test.beforeEach(async ({ loginPage }) => {
-  await loginPage.goto();
+  await loginPage.goToLoginPage();
 });
 
 test('Verify page title', async ({ loginPage }) => {
@@ -19,7 +19,7 @@ test.describe('Log in/out', () => {
   });
 
   test('Log out', async ({ loginPage }) => {
-    await loginPage.logOutButton.click();
+    await loginPage.logOutLink.click();
     await expect(loginPage.contentHeading).toHaveText('Login Page');
     await expect(loginPage.flashMessage).toContainText('You logged out of the secure area!');
   });

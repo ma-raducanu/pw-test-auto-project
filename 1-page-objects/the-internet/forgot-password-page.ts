@@ -13,9 +13,9 @@ export class ForgotPasswordPage extends BasePage {
     this.retrievePasswordButton = page.getByRole('button', { name: 'Retrieve Password' });
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Forgot Password').click();
+  async goToForgotPasswordPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Forgot Password');
   }
 
   async retrievePassword(email: string): Promise<void> {

@@ -1,7 +1,7 @@
 import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
 
 test.beforeEach(async ({ dropdownListPage }) => {
-  await dropdownListPage.goto();
+  await dropdownListPage.goToDropdownPage();
 });
 
 test('Verify page title', async ({ dropdownListPage }) => {

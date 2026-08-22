@@ -1,7 +1,7 @@
 import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
 
 test.beforeEach(async ({ forgotPasswordPage }) => {
-  await forgotPasswordPage.goto();
+  await forgotPasswordPage.goToForgotPasswordPage();
 });
 
 test('Verify page title', async ({ forgotPasswordPage }) => {

@@ -1,7 +1,7 @@
 import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
 
 test.beforeEach(async ({ dragAndDropPage }) => {
-  await dragAndDropPage.goto();
+  await dragAndDropPage.goToDragAndDropPage();
 });
 
 test('Verify page title', async ({ dragAndDropPage }) => {

@@ -13,8 +13,8 @@ export class DropdownListPage extends BasePage {
     this.dropdownOption = this.dropdown.locator('option');
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Dropdown').click();
+  async goToDropdownPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Dropdown');
   }
 }

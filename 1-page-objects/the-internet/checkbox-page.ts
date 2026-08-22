@@ -11,8 +11,8 @@ export class CheckboxPage extends BasePage {
     this.checkbox2 = page.getByRole('checkbox').nth(1);
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Checkboxes').click();
+  async goToCheckboxesPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Checkboxes');
   }
 }

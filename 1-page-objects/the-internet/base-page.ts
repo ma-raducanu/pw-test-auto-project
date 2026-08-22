@@ -13,11 +13,11 @@ export class BasePage {
       this.content.locator('h3'));
   }
 
-  async goToHome(): Promise<void> {
+  async goToHomePage(): Promise<void> {
     await this.page.goto('https://the-internet.herokuapp.com/');
   }
 
-  getSideMenuLink(linkName: string): Locator {
-    return this.page.getByRole('link', { name: linkName });
+  async goToPageLink(pageLinkName: string): Promise<void> {
+    await this.page.getByRole('link', { name: pageLinkName }).first().click();
   }
 }

@@ -11,8 +11,8 @@ export class ElementPage extends BasePage {
     this.deleteElementButton = this.page.getByRole('button', { name: 'Delete' });
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Add/Remove Elements').click();
+  async goToElementPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Add/Remove Elements');
   }
 }

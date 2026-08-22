@@ -1,10 +1,10 @@
 import { test as base } from '@playwright/test';
 import { HomePage } from '../../1-page-objects/automation-exercise/home-page';
-import { RegisterPage } from '../../1-page-objects/automation-exercise/register-page';
+import { AuthPage } from '../../1-page-objects/automation-exercise/auth-page';
 
 type Pages = {
   homePage: HomePage;
-  registerPage: RegisterPage;
+  authPage: AuthPage;
 };
 
 export const test = base.extend<Pages> ({
@@ -12,9 +12,9 @@ export const test = base.extend<Pages> ({
     const homePage = new HomePage(page);
     await use(homePage);
   },
-  registerPage: async ({ page }, use) => {
-    const registerPage = new RegisterPage(page);
-    await use(registerPage);
+  authPage: async ({ page }, use) => {
+    const authPage = new AuthPage(page);
+    await use(authPage);
   },
 });
 

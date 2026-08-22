@@ -4,7 +4,7 @@ import { BasePage } from './base-page';
 export class LoginPage extends BasePage {
   readonly flashMessage: Locator;
   readonly logInButton: Locator;
-  readonly logOutButton: Locator;
+  readonly logOutLink: Locator;
   readonly passwordInput: Locator;
   readonly usernameInput: Locator;
 
@@ -12,14 +12,14 @@ export class LoginPage extends BasePage {
     super(page);
     this.flashMessage = page.locator('#flash');
     this.logInButton = page.getByRole('button', { name: 'Login' });
-    this.logOutButton = page.getByRole('link', { name: 'Logout' });
+    this.logOutLink = page.getByRole('link', { name: 'Logout' });
     this.passwordInput = page.getByRole('textbox', { name: 'Password' });
     this.usernameInput = page.getByRole('textbox', { name: 'Username' });
   }
 
-  async goto(): Promise<void> {
-    await this.goToHome();
-    await this.getSideMenuLink('Form Authentication').click();
+  async goToLoginPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Form Authentication');
   }
 
   async logIn(username: string, password: string): Promise<void> {

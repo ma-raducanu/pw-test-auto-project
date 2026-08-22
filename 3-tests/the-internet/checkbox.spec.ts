@@ -1,7 +1,7 @@
 import { expect, test } from '../../2-fixtures/the-internet/page-fixtures';
 
 test.beforeEach(async ({ checkboxPage }) => {
-  await checkboxPage.goto();
+  await checkboxPage.goToCheckboxesPage();
 });
 
 test('Verify page title', async ({ checkboxPage }) => {
