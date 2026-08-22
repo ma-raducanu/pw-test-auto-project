@@ -24,7 +24,13 @@ export class BasePage {
   
   async goToHome(): Promise<void> {
     await this.page.goto('https://www.automationexercise.com/');
-    await this.consentButton.click();
+    await this.consentToCookies();
+  }
+
+  async consentToCookies(): Promise<void> {
+    if (await this.consentButton.isVisible()) {
+      await this.consentButton.click();
+    }
   }
 
   async closeAdFrame(): Promise<void> {

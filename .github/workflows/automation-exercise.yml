@@ -1,4 +1,4 @@
-name: Sauce Demo
+name: Automation Exercise
 on:
   push:
     branches: [ main ]
