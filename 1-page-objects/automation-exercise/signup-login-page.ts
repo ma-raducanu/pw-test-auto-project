@@ -2,7 +2,7 @@ import type { Locator, Page } from '@playwright/test';
 import { createTestUser } from '../../0-utils/automation-exercise/test-data';
 import { BasePage } from './base-page';
 
-export class AuthPage extends BasePage {
+export class SignupLoginPage extends BasePage {
   readonly signUpButton: Locator;
   readonly fullNameInput: Locator;
   readonly emailInput: Locator;
