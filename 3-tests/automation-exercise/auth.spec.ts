@@ -1,6 +1,5 @@
 import { expect, test } from '../../2-fixtures/automation-exercise/page-fixtures';
 
-test.setTimeout(60_000);
 test.beforeEach(async ({ homePage }) => {
   await homePage.goToHome();
   await homePage.signupLoginLink.click();

@@ -44,5 +44,11 @@ jobs:
       if: ${{ !cancelled() }}
       with:
         name: playwright-report-the-internet
-        path: playwright-report/the-internet
-        retention-days: 30
+        path: playwright-report/
+        retention-days: 3
+    - uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+        name: test-results-the-internet
+        path: test-results/
+        retention-days: 3

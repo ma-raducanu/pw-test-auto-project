@@ -10,7 +10,6 @@ export class BasePage {
   readonly adFrame: FrameLocator;
   readonly adFrameCloseButton: Locator;
   
-
   constructor(page: Page) {
     this.page = page;
     this.consentButton = this.page.getByRole('button', { name: 'Consent' });
