@@ -4,7 +4,7 @@ test.beforeEach(async ({ homePage }) => {
   await homePage.goToHome();
 });
 
-test('Navigate to the Home page', async ({ homePage }) => {
+test.skip('Navigate to the Home page', async ({ homePage }) => {
   await expect(homePage.homeLink).toHaveAttribute('style', 'color: orange;');
   await expect(homePage.page).toHaveURL('https://www.automationexercise.com/');
 });

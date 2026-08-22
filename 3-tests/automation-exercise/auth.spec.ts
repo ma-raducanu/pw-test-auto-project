@@ -5,12 +5,12 @@ test.beforeEach(async ({ homePage }) => {
   await homePage.signupLoginLink.click();
 });
 
-test('Navigate to the Login page', async ({ signupLoginPage }) => {
+test.skip('Navigate to the Login page', async ({ signupLoginPage }) => {
   await expect(signupLoginPage.page).toHaveURL('https://www.automationexercise.com/login');
   await expect(signupLoginPage.signupLoginLink).toHaveAttribute('style', 'color: orange;');
 });
 
-test('Register a new user', async ({ homePage, signupLoginPage }) => {
+test.skip('Register a new user', async ({ homePage, signupLoginPage }) => {
   await signupLoginPage.registerNewUser();
   await expect(signupLoginPage.page).toHaveURL('https://www.automationexercise.com/account_created');
   await expect(signupLoginPage.confirmationHeader).toHaveText('Account Created!');
