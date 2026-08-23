@@ -3,18 +3,13 @@ import { BasePage } from './base.page';
 
 export class DragAndDropPage extends BasePage {
   readonly columns: Locator;
+  readonly columnA: Locator;
+  readonly columnB: Locator;
 
   constructor(page: Page) {
     super(page);
     this.columns = page.locator('#columns').locator('div[id*="column"]');
-  }
-
-  async goToDragAndDropPage(): Promise<void> {
-    await this.goToHomePage();
-    await this.goToPageLink('Drag and Drop');
-  }
-
-  getColumnId(columnName: string): Locator {
-    return this.page.locator(`#column-${columnName.toLowerCase()}`);
+    this.columnA = this.columns.locator('#column-a');
+    this.columnB = this.columns.locator('#column-b');
   }
 }

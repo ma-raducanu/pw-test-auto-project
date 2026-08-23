@@ -9,12 +9,12 @@ test('Verify page title', async ({ dragAndDropPage }) => {
 });
 
 test('Drag and drop', async ({ dragAndDropPage }) => {
-  await dragAndDropPage.getColumnId('A').dragTo(dragAndDropPage.getColumnId('B'));
+  await dragAndDropPage.columnA.dragTo(dragAndDropPage.columnB);
   await expect(dragAndDropPage.columns).toHaveText(['B', 'A']);
 });
 
 test('Drag and drop and repeat', async ({ dragAndDropPage }) => {
-  await dragAndDropPage.getColumnId('A').dragTo(dragAndDropPage.getColumnId('B'));
-  await dragAndDropPage.getColumnId('B').dragTo(dragAndDropPage.getColumnId('A'));
+  await dragAndDropPage.columnA.dragTo(dragAndDropPage.columnB);
+  await dragAndDropPage.columnB.dragTo(dragAndDropPage.columnA);
   await expect(dragAndDropPage.columns).toHaveText(['A', 'B']);
 });

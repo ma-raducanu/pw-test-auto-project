@@ -17,35 +17,14 @@ type Pages = {
   loginPage: LoginPage;
 };
 
-export const test = base.extend<Pages> ({
-  checkboxPage: async ({ page }, use) => {
-    const checkboxPage = new CheckboxPage(page);
-    await use(checkboxPage);
-  },
-  dragAndDropPage: async ({ page }, use) => {
-    const dragAndDropPage = new DragAndDropPage(page);
-    await use(dragAndDropPage);
-  },
-  dropdownListPage: async ({ page }, use) => {
-    const dropdownListPage = new DropdownListPage(page);
-    await use(dropdownListPage);
-  },
-  elementPage: async ({ page }, use) => {
-    const elementPage = new ElementPage(page);
-    await use(elementPage);
-  },
-  fileDownloadPage: async ({ page }, use) => {
-    const fileDownloadPage = new FileDownloadPage(page);
-    await use(fileDownloadPage);
-  },
-  forgotPasswordPage: async ({ page }, use) => {
-    const forgotPasswordPage = new ForgotPasswordPage(page);
-    await use(forgotPasswordPage);
-  },
-  loginPage: async ({ page }, use) => {
-    const loginPage = new LoginPage(page);
-    await use(loginPage);
-  },
+export const test = base.extend<Pages>({
+  checkboxPage: async ({ page }, use) => await use(new CheckboxPage(page)),
+  dragAndDropPage: async ({ page }, use) => await use(new DragAndDropPage(page)),
+  dropdownListPage: async ({ page }, use) => await use(new DropdownListPage(page)),
+  elementPage: async ({ page }, use) => await use(new ElementPage(page)),
+  fileDownloadPage: async ({ page }, use) => await use(new FileDownloadPage(page)),
+  forgotPasswordPage: async ({ page }, use) => await use(new ForgotPasswordPage(page)),
+  loginPage: async ({ page }, use) => await use(new LoginPage(page)),
 });
 
 export { expect } from '@playwright/test';

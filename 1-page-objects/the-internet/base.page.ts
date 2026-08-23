@@ -20,4 +20,39 @@ export class BasePage {
   async goToPageLink(pageLinkName: string): Promise<void> {
     await this.page.getByRole('link', { name: pageLinkName }).first().click();
   }
+
+  async goToCheckboxesPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Checkboxes');
+  }
+
+  async goToDragAndDropPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Drag and Drop');
+  }
+
+  async goToDropdownPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Dropdown');
+  }
+
+  async goToElementPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Add/Remove Elements');
+  }
+
+  async goToFileDownloadPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('File Download');
+  }
+
+  async goToForgotPasswordPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Forgot Password');
+  }
+
+  async goToLoginPage(): Promise<void> {
+    await this.goToHomePage();
+    await this.goToPageLink('Form Authentication');
+  }
 }
