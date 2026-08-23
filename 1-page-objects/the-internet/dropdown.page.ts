@@ -12,4 +12,9 @@ export class DropdownListPage extends BasePage {
     this.dropdownCheckedOption = this.dropdown.locator('option:checked');
     this.dropdownOption = this.dropdown.locator('option');
   }
+
+  async goToDropdownPage(): Promise<void> {
+    await this.goToPage('https://the-internet.herokuapp.com/');
+    await this.goToPageLink('Dropdown');
+  }
 }

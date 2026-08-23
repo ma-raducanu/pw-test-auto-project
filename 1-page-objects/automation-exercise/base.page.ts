@@ -21,8 +21,8 @@ export class BasePage {
     this.adFrameCloseButton = this.adFrame.locator('#dismiss-button');
   }
   
-  async goToHome(): Promise<void> {
-    await this.page.goto('https://www.automationexercise.com/');
+  async goToPage(url: string): Promise<void> {
+    await this.page.goto(url);
     await this.consentToCookies();
   }
 

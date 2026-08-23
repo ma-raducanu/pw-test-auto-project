@@ -9,6 +9,11 @@ export class FileDownloadPage extends BasePage {
     super(page);
   }
 
+  async goToFileDownloadPage(): Promise<void> {
+    await this.goToPage('https://the-internet.herokuapp.com/');
+    await this.goToPageLink('File Download');
+  }
+
   async downloadFile(fileName: string): Promise<Download> {
     const downloadPromise = this.page.waitForEvent('download');
     await this.getLinkByFileName(fileName).click();

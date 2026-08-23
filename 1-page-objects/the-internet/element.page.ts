@@ -10,4 +10,9 @@ export class ElementPage extends BasePage {
     this.addElementButton = this.page.getByRole('button', { name: 'Add Element' });
     this.deleteElementButton = this.page.getByRole('button', { name: 'Delete' });
   }
+
+  async goToElementPage(): Promise<void> {
+    await this.goToPage('https://the-internet.herokuapp.com/');
+    await this.goToPageLink('Add/Remove Elements');
+  }
 }

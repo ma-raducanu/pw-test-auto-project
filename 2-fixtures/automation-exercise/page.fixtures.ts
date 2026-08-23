@@ -8,14 +8,8 @@ type Pages = {
 };
 
 export const test = base.extend<Pages> ({
-  homePage: async ({ page }, use) => {
-    const homePage = new HomePage(page);
-    await use(homePage);
-  },
-  signupLoginPage: async ({ page }, use) => {
-    const signupLoginPage = new SignupLoginPage(page);
-    await use(signupLoginPage);
-  },
+  homePage: async ({ page }, use) => await use(new HomePage(page)),
+  signupLoginPage: async ({ page }, use) => await use(new SignupLoginPage(page)),
 });
 
 export { expect } from '@playwright/test';
