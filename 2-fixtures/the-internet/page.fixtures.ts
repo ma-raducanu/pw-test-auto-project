@@ -5,6 +5,7 @@ import { DropdownListPage } from '../../1-page-objects/the-internet/dropdown.pag
 import { ElementPage } from '../../1-page-objects/the-internet/element.page';
 import { FileDownloadPage } from '../../1-page-objects/the-internet/file-download.page';
 import { ForgotPasswordPage } from '../../1-page-objects/the-internet/forgot-password.page';
+import { InputPage } from '../../1-page-objects/the-internet/input.page';
 import { LoginPage } from '../../1-page-objects/the-internet/login.page';
 
 type Pages = {
@@ -14,6 +15,7 @@ type Pages = {
   elementPage: ElementPage;
   fileDownloadPage: FileDownloadPage;
   forgotPasswordPage: ForgotPasswordPage;
+  inputPage: InputPage;
   loginPage: LoginPage;
 };
 
@@ -24,6 +26,7 @@ export const test = base.extend<Pages>({
   elementPage: async ({ page }, use) => await use(new ElementPage(page)),
   fileDownloadPage: async ({ page }, use) => await use(new FileDownloadPage(page)),
   forgotPasswordPage: async ({ page }, use) => await use(new ForgotPasswordPage(page)),
+  inputPage: async ({ page }, use) => await use(new InputPage(page)),
   loginPage: async ({ page }, use) => await use(new LoginPage(page)),
 });
 

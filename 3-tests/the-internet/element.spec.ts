@@ -14,9 +14,7 @@ test('Add an element', async ({ elementPage }) => {
 });
 
 test('Add multiple elements', async ({ elementPage }) => {
-  for (let i = 0; i < 2; i++) {
-    await elementPage.addElementButton.click();
-  }
+  await elementPage.addTwoElements();
   await expect(elementPage.deleteElementButton).toHaveCount(2);
 });
 
