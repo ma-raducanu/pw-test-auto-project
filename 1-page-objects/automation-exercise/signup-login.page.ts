@@ -20,25 +20,24 @@ export class SignupLoginPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.signUpButton = this.page.getByRole('button', { name: 'Signup' });
-    this.fullNameInput = this.page.locator('input[data-qa="signup-name"]');
-    this.emailInput = this.page.locator('input[data-qa="signup-email"]');
-    this.passwordInput = this.page.getByRole('textbox', { name: 'Password *' });
-    this.firstNameInput = this.page.getByRole('textbox', { name: 'First name *' });
-    this.lastNameInput = this.page.getByRole('textbox', { name: 'Last name *' });
-    this.addressInput = this.page.getByRole('textbox', { name: 'Address *' });
-    this.countrySelect = this.page.getByRole('combobox', { name: 'Country *' });
-    this.stateInput = this.page.getByRole('textbox', { name: 'State *' });
-    this.cityInput = this.page.getByRole('textbox', { name: 'City *' });
-    this.zipCodeInput = this.page.locator('input#zipcode'); // BUG: The label for this input is "City".
-    this.mobileNumberInput = this.page.getByRole('textbox', { name: 'Mobile Number *' });
-    this.createAccountButton = this.page.getByRole('button', { name: 'Create Account' });
-    this.continueButton = this.page.getByRole('link', { name: 'Continue' });
+    this.signUpButton = page.getByRole('button', { name: 'Signup' });
+    this.fullNameInput = page.locator('input[data-qa="signup-name"]');
+    this.emailInput = page.locator('input[data-qa="signup-email"]');
+    this.passwordInput = page.getByRole('textbox', { name: 'Password *' });
+    this.firstNameInput = page.getByRole('textbox', { name: 'First name *' });
+    this.lastNameInput = page.getByRole('textbox', { name: 'Last name *' });
+    this.addressInput = page.getByRole('textbox', { name: 'Address *' });
+    this.countrySelect = page.getByRole('combobox', { name: 'Country *' });
+    this.stateInput = page.getByRole('textbox', { name: 'State *' });
+    this.cityInput = page.getByRole('textbox', { name: 'City *' });
+    this.zipCodeInput = page.locator('input#zipcode'); // BUG: The label for this input is "City".
+    this.mobileNumberInput = page.getByRole('textbox', { name: 'Mobile Number *' });
+    this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
+    this.continueButton = page.getByRole('link', { name: 'Continue' });
   }
 
   async goToLoginSignupPage(): Promise<void> {
     await this.goToPage('https://www.automationexercise.com/login');
-    // await this.signupLoginLink.click();
   }
 
   async registerNewUser(): Promise<void> {

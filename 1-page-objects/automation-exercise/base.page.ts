@@ -12,12 +12,12 @@ export class BasePage {
   
   constructor(page: Page) {
     this.page = page;
-    this.consentButton = this.page.getByRole('button', { name: 'Consent' });
-    this.homeLink = this.page.getByRole('link', { name: 'Home' });
-    this.signupLoginLink = this.page.getByRole('link', { name: 'Signup / Login' });
-    this.deleteAccountLink = this.page.getByRole('link', { name: 'Delete Account' });
-    this.confirmationHeader = this.page.locator('h2.title.text-center');
-    this.adFrame = this.page.frameLocator('iFrame[id="aswift_1"]');
+    this.consentButton = page.getByRole('button', { name: 'Consent' });
+    this.homeLink = page.getByRole('link', { name: 'Home' });
+    this.signupLoginLink = page.getByRole('link', { name: 'Signup / Login' });
+    this.deleteAccountLink = page.getByRole('link', { name: 'Delete Account' });
+    this.confirmationHeader = page.locator('h2.title.text-center');
+    this.adFrame = page.frameLocator('iFrame[id="aswift_1"]');
     this.adFrameCloseButton = this.adFrame.locator('#dismiss-button');
   }
   

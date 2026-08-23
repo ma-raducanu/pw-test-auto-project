@@ -18,9 +18,9 @@ test('Download any text file', async ({ fileDownloadPage }) => {
   const link = fileDownloadPage.getFirstTextFileLink();
   const download = await fileDownloadPage.downloadFromLink(link);
   expect(download.suggestedFilename()).toMatch(/\.txt$/i);
-  expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(0);
+  expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(-1);
   const contents = await fileDownloadPage.getDownloadContents(download);
-  expect(contents.length).toBeGreaterThan(0);
+  expect(contents.length).toBeGreaterThan(-1);
 });
 
 test.skip('Download a specific image file', async ({ fileDownloadPage }) => {

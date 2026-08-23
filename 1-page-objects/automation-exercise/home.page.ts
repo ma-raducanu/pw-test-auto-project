@@ -9,6 +9,5 @@ export class HomePage extends BasePage {
 
   async goToHomePage(): Promise<void> {
     await this.goToPage('https://www.automationexercise.com/');
-    await this.homeLink.click();
   }
 }

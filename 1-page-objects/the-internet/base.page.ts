@@ -1,7 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 
 export class BasePage {
-  protected readonly page: Page;
+  readonly page: Page;
   readonly contentHeading: Locator;
   readonly content: Locator;
 

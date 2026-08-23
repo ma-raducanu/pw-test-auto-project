@@ -7,8 +7,8 @@ export class ElementPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.addElementButton = this.page.getByRole('button', { name: 'Add Element' });
-    this.deleteElementButton = this.page.getByRole('button', { name: 'Delete' });
+    this.addElementButton = page.getByRole('button', { name: 'Add Element' });
+    this.deleteElementButton = page.getByRole('button', { name: 'Delete' });
   }
 
   async goToElementPage(): Promise<void> {

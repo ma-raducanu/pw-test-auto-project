@@ -9,8 +9,8 @@ export class DragAndDropPage extends BasePage {
   constructor(page: Page) {
     super(page);
     this.columns = page.locator('#columns').locator('div[id*="column"]');
-    this.columnA = this.columns.locator('#column-a');
-    this.columnB = this.columns.locator('#column-b');
+    this.columnA = page.locator('#column-a');
+    this.columnB = page.locator('#column-b');
   }
 
   async goToDragAndDropPage(): Promise<void> {
