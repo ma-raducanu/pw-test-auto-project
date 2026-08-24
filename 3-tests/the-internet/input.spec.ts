@@ -9,11 +9,11 @@ test('Verify page title', async ({ inputPage }) => {
 });
 
 test('Increase input', async ({ inputPage }) => {
-  await inputPage.increaseNumberInputValue(3);
+  await inputPage.changeNumberInputValue(3);
   await expect(inputPage.numberInput).toHaveValue('3');
 });
 
 test('Decrease input', async ({ inputPage }) => {
-  await inputPage.decreaseNumberInputValue(3);
+  await inputPage.changeNumberInputValue(-3);
   await expect(inputPage.numberInput).toHaveValue('-3');
 });

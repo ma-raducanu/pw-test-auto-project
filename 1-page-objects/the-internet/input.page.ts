@@ -14,15 +14,10 @@ export class InputPage extends BasePage {
     await this.goToPageLink('Inputs');
   }
 
-  async increaseNumberInputValue(increment: number): Promise<void> {
-    for (let i = 0; i < increment; i++) {
-      await this.numberInput.press('ArrowUp');
-    }
-  }
-
-  async decreaseNumberInputValue(decrement: number): Promise<void> {
-    for (let i = 0; i < decrement; i++) {
-      await this.numberInput.press('ArrowDown');
+  async changeNumberInputValue(amount: number): Promise<void> {
+    const key = amount >= 0 ? 'ArrowUp' : 'ArrowDown';
+    for (let i = 0; i < Math.abs(amount); i++) {
+      await this.numberInput.press(key);
     }
   }
 }
