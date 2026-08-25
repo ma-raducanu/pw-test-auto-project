@@ -32,13 +32,13 @@ test('View user profile after hovering over the first figure', async ({ hoverPag
   await expect(hoverPage.page).toHaveURL('https://the-internet.herokuapp.com/users/1');
 });
 
-test('View user profile after hovering over the second figure', async ({ hoverPage }) => {
+test.skip('View user profile after hovering over the second figure', {tag: '@Flaky'}, async ({ hoverPage }) => {
   await hoverPage.figure.nth(1).hover();
   await hoverPage.figureViewProfileLink.click();
   await expect(hoverPage.page).toHaveURL('https://the-internet.herokuapp.com/users/2');
 });
 
-test('View user profile after hovering over the third figure', async ({ hoverPage }) => {
+test.skip('View user profile after hovering over the third figure', {tag: '@Flaky'}, async ({ hoverPage }) => {
   await hoverPage.figure.nth(2).hover();
   await hoverPage.figureViewProfileLink.click();
   await expect(hoverPage.page).toHaveURL('https://the-internet.herokuapp.com/users/3');

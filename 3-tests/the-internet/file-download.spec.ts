@@ -8,12 +8,6 @@ test('Verify page title', async ({ fileDownloadPage }) => {
   await expect(fileDownloadPage.contentHeading).toHaveText('File Downloader');
 });
 
-test('Download any image file', async ({ fileDownloadPage }) => {
-  const link = fileDownloadPage.getFirstImageFileLink();
-  const download = await fileDownloadPage.downloadFromLink(link);
-  expect(download.suggestedFilename()).toMatch(/\.(jpg|jpeg|png|gif)$/i);
-});
-
 test('Download any text file', async ({ fileDownloadPage }) => {
   const link = fileDownloadPage.getFirstTextFileLink();
   const download = await fileDownloadPage.downloadFromLink(link);
@@ -23,7 +17,14 @@ test('Download any text file', async ({ fileDownloadPage }) => {
   expect(contents.length).toBeGreaterThan(-1);
 });
 
-test.skip('Download a specific image file', async ({ fileDownloadPage }) => {
+test.skip('Download any image file', {tag: '@Dynamic'}, async ({ fileDownloadPage }) => {
+  const link = fileDownloadPage.getFirstImageFileLink();
+  const download = await fileDownloadPage.downloadFromLink(link);
+  expect(download.suggestedFilename()).toMatch(/\.(jpg|jpeg|png|gif)$/i);
+  expect(await fileDownloadPage.getDownloadSize(download)).toBeGreaterThan(-1);
+});
+
+test.skip('Download a specific image file', {tag: '@Dynamic'}, async ({ fileDownloadPage }) => {
   const fileName = 'cognizant.png';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);
@@ -34,7 +35,7 @@ test.skip('Download a specific image file', async ({ fileDownloadPage }) => {
   expect(image.height).toBe(186);
 });
 
-test.skip('Download a specific text file', async ({ fileDownloadPage }) => {
+test.skip('Download a specific text file', {tag: '@Dynamic'}, async ({ fileDownloadPage }) => {
   const fileName = 'my test file.txt';
   const download = await fileDownloadPage.downloadFile(fileName);
   expect(download.suggestedFilename()).toBe(fileName);

@@ -10,5 +10,5 @@ test('Verify page title', async ({ forgotPasswordPage }) => {
 
 test('Retrieve password', async ({ forgotPasswordPage }) => {
   await forgotPasswordPage.retrievePassword('test@test.com');
-  await expect(forgotPasswordPage.confirmationMessage).toContainText('Internal Server Error');
+  await expect(forgotPasswordPage.confirmationMessage).toHaveText('Internal Server Error');
 });
