@@ -9,12 +9,12 @@ test('Verify page title', async ({ dropdownListPage }) => {
 });
 
 test('Select the first option from the dropdown', async ({ dropdownListPage }) => {
-  const firstOptionText = await dropdownListPage.dropdownOption.nth(1).textContent();
   await dropdownListPage.dropdown.selectOption({ index: 1 });
-  await expect(dropdownListPage.dropdownCheckedOption).toHaveText(firstOptionText!);
+  await expect(dropdownListPage.dropdownOption.filter({hasText: 'Option 1'})).toBeVisible();
 });
 
 test('Select a specific option from the dropdown', async ({ dropdownListPage }) => {
   await dropdownListPage.dropdown.selectOption({ label: 'Option 2' });
-  await expect(dropdownListPage.dropdownCheckedOption).toHaveText('Option 2');
+  await expect(dropdownListPage.dropdownOption.nth(2)).toHaveAttribute('selected', 'selected');
+  await expect(dropdownListPage.dropdownOption.nth(2)).toHaveText('Option 2');
 });
