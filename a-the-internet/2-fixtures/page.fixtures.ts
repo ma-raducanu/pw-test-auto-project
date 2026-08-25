@@ -1,13 +1,13 @@
 import { test as base } from '@playwright/test';
-import { CheckboxPage } from '../../1-page-objects/the-internet/checkbox.page';
-import { DragAndDropPage } from '../../1-page-objects/the-internet/drag-and-drop.page';
-import { DropdownListPage } from '../../1-page-objects/the-internet/dropdown.page';
-import { ElementPage } from '../../1-page-objects/the-internet/element.page';
-import { FileDownloadPage } from '../../1-page-objects/the-internet/file-download.page';
-import { ForgotPasswordPage } from '../../1-page-objects/the-internet/forgot-password.page';
-import { HoverPage } from '../../1-page-objects/the-internet/hover.page';
-import { InputPage } from '../../1-page-objects/the-internet/input.page';
-import { LoginPage } from '../../1-page-objects/the-internet/login.page';
+import { CheckboxPage } from '../1-page-objects/checkbox.page';
+import { DragAndDropPage } from '../1-page-objects/drag-and-drop.page';
+import { DropdownListPage } from '../1-page-objects/dropdown.page';
+import { ElementPage } from '../1-page-objects/element.page';
+import { FileDownloadPage } from '../1-page-objects/file-download.page';
+import { ForgotPasswordPage } from '../1-page-objects/forgot-password.page';
+import { HoverPage } from '../1-page-objects/hover.page';
+import { InputPage } from '../1-page-objects/input.page';
+import { LoginPage } from '../1-page-objects/login.page';
 
 type Pages = {
   checkboxPage: CheckboxPage;
