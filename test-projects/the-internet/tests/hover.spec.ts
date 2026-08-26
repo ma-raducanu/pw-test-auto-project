@@ -1,4 +1,4 @@
-import { expect, test } from '../2-fixtures/page.fixtures';
+import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ hoverPage }) => {
   await hoverPage.goToHoverPage();

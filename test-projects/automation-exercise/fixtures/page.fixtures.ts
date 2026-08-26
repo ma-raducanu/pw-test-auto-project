@@ -1,6 +1,6 @@
 import { test as base } from '@playwright/test';
-import { HomePage } from '../1-page-objects/home.page';
-import { SignupLoginPage } from '../1-page-objects/signup-login.page';
+import { HomePage } from '../page-objects/home.page';
+import { SignupLoginPage } from '../page-objects/signup-login.page';
 
 type Pages = {
   homePage: HomePage;
