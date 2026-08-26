@@ -1,7 +1,8 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ inputPage }) => {
-  await inputPage.goToInputPage();
+  await inputPage.goToPage('https://the-internet.herokuapp.com/');
+  await inputPage.goToPageLink('Inputs');
 });
 
 test('Verify page title', async ({ inputPage }) => {

@@ -17,11 +17,6 @@ export class LoginPage extends BasePage {
     this.usernameInput = page.getByRole('textbox', { name: 'Username' });
   }
 
-  async goToLoginPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Form Authentication');
-  }
-
   async logIn(username: string, password: string): Promise<void> {
     await this.usernameInput.fill(username);
     await this.passwordInput.fill(password);

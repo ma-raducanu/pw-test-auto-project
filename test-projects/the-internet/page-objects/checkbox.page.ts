@@ -10,9 +10,4 @@ export class CheckboxPage extends BasePage {
     this.checkbox1 = page.getByRole('checkbox').first();
     this.checkbox2 = page.getByRole('checkbox').nth(1);
   }
-
-  async goToCheckboxesPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Checkboxes');
-  }
 }

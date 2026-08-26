@@ -9,11 +9,6 @@ export class InputPage extends BasePage {
     this.numberInput = page.getByRole('spinbutton');
   }
 
-  async goToInputPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Inputs');
-  }
-
   async changeNumberInputValue(amount: number): Promise<void> {
     const key = amount >= 0 ? 'ArrowUp' : 'ArrowDown';
     for (let i = 0; i < Math.abs(amount); i++) {

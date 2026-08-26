@@ -1,7 +1,8 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ forgotPasswordPage }) => {
-  await forgotPasswordPage.goToForgotPasswordPage();
+  await forgotPasswordPage.goToPage('https://the-internet.herokuapp.com/');
+  await forgotPasswordPage.goToPageLink('Forgot Password');
 });
 
 test('Verify page title', async ({ forgotPasswordPage }) => {

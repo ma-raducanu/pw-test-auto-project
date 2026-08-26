@@ -1,7 +1,8 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ dragAndDropPage }) => {
-  await dragAndDropPage.goToDragAndDropPage();
+  await dragAndDropPage.goToPage('https://the-internet.herokuapp.com/');
+  await dragAndDropPage.goToPageLink('Drag and Drop');
 });
 
 test('Verify page title', async ({ dragAndDropPage }) => {

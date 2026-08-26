@@ -13,11 +13,6 @@ export class ForgotPasswordPage extends BasePage {
     this.retrievePasswordButton = page.getByRole('button', { name: 'Retrieve Password' });
   }
 
-  async goToForgotPasswordPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Forgot Password');
-  }
-
   async retrievePassword(email: string): Promise<void> {
     await this.emailInput.fill(email);
     await this.retrievePasswordButton.click();

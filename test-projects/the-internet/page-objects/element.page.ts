@@ -11,11 +11,6 @@ export class ElementPage extends BasePage {
     this.deleteElementButton = page.getByRole('button', { name: 'Delete' });
   }
 
-  async goToElementPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Add/Remove Elements');
-  }
-
   async addTwoElements(): Promise<void> {
     for (let i = 0; i < 2; i++) {
       await this.addElementButton.click();

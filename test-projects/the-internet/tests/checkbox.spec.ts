@@ -1,7 +1,8 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ checkboxPage }) => {
-  await checkboxPage.goToCheckboxesPage();
+  await checkboxPage.goToPage('https://the-internet.herokuapp.com/');
+  await checkboxPage.goToPageLink('Checkboxes');
 });
 
 test('Verify page title', async ({ checkboxPage }) => {

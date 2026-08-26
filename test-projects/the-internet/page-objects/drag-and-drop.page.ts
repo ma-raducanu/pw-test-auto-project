@@ -12,9 +12,4 @@ export class DragAndDropPage extends BasePage {
     this.columnA = page.locator('#column-a');
     this.columnB = page.locator('#column-b');
   }
-
-  async goToDragAndDropPage(): Promise<void> {
-    await this.goToPage('https://the-internet.herokuapp.com/');
-    await this.goToPageLink('Drag and Drop');
-  }
 }

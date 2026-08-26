@@ -1,7 +1,8 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ dropdownListPage }) => {
-  await dropdownListPage.goToDropdownPage();
+  await dropdownListPage.goToPage('https://the-internet.herokuapp.com/');
+  await dropdownListPage.goToPageLink('Dropdown');
 });
 
 test('Verify page title', async ({ dropdownListPage }) => {
