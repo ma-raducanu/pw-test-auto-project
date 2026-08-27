@@ -36,10 +36,6 @@ export class SignupLoginPage extends BasePage {
     this.continueButton = page.getByRole('link', { name: 'Continue' });
   }
 
-  async goToLoginSignupPage(): Promise<void> {
-    await this.goToPage('https://www.automationexercise.com/login');
-  }
-
   async registerNewUser(): Promise<void> {
     const testUser = createTestUser();
     await this.fullNameInput.fill(`${testUser.firstName} ${testUser.lastName}`);

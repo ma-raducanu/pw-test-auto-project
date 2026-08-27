@@ -1,7 +1,7 @@
 import { expect, test } from '../fixtures/page.fixtures';
 
 test.beforeEach(async ({ signupLoginPage }) => {
-  await signupLoginPage.goToLoginSignupPage();
+  await signupLoginPage.goToPage('https://www.automationexercise.com/login');
 });
 
 test('Navigate to the Login page', async ({ signupLoginPage }) => {
